@@ -1,9 +1,9 @@
-function HomeComponent() {
-    return(
-        <div>
-            
-        </div>
-    )
-}
+import HeaderComponent from "../header/HeaderComponent";
 
-export default HomeComponent;
+export default function HomeComponent() {
+  return (
+    <div>
+        <HeaderComponent />
+    </div>
+  )
+}
