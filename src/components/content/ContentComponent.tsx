@@ -1,3 +1,4 @@
+import DetailBlogComponent from '../detail_blog/DetailBlogComponent';
 import ListBlogComponent from '../list-blog/ListBlogComponent';
 import './ContentStyle.css';
 
@@ -23,8 +24,8 @@ function ContentComponent() {
                 <div className="rightcolumn">
                     <div className="card">
                         {
-                            topicsBlog.map((item) => (
-                                <button className={`bg-transparent hover:bg-cyan-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded`}>
+                            topicsBlog.map((item, key) => (
+                                <button key = {key}className={`bg-transparent hover:bg-cyan-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded`}>
                                     {item.name}
                                 </button>
                             ))
