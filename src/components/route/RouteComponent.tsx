@@ -14,7 +14,7 @@ export default function RouteComponent() {
 
                 <Route path="/add-blog" element={<InsertBlogComponent />}>  </Route>
 
-                <Route path="/detail" element={<DetailBlogComponent />}>  </Route>
+                <Route path="/detail/:id" element={<DetailBlogComponent />}>  </Route>
 
                 <Route path="/my-blog" element={<MyBlogComponent />}>  </Route>
             </Routes>

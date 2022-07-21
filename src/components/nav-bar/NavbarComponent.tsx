@@ -93,7 +93,11 @@ export default function NavbarComponent() {
                                 />
                             </a>
                         </div>
-                        <div className="-mr-2 -my-2 md:hidden">
+                        <div className="flex justify-start lg:w-0 lg:flex-1">
+                            <label className="relative block w-10/12">
+                                <span className="sr-only">Search</span>
+                                <input className="placeholder:italic placeholder:text-slate-400 block bg-white w-full border border-slate-300 rounded-md py-2 pl-4 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" placeholder="Search for anything..." type="text" name="search" />
+                            </label>
                         </div>
                         <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
                             <Popover className="relative">
@@ -126,7 +130,7 @@ export default function NavbarComponent() {
                                             leaveFrom="opacity-100 translate-y-0"
                                             leaveTo="opacity-0 translate-y-1"
                                         >
-                                            <Popover.Panel className="absolute z-10 -ml-4 mt-3 transform px-2 w-screen max-w-md sm:px-0 lg:ml-0 lg:left-1/2 lg:-translate-x-1/2" style={{left: -160}}>
+                                            <Popover.Panel className="absolute z-10 -ml-4 mt-3 transform px-2 w-screen max-w-md sm:px-0 lg:ml-0 lg:left-1/2 lg:-translate-x-1/2" style={{ left: -160 }}>
                                                 <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden">
                                                     <div className="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">
                                                         {solutions.map((item) => (
@@ -165,7 +169,6 @@ export default function NavbarComponent() {
                         </div>
                     </div>
                 </div>
-
                 <Transition
                     as={Fragment}
                     enter="duration-200 ease-out"

@@ -1,5 +1,6 @@
 import DetailBlogComponent from '../detail_blog/DetailBlogComponent';
 import ListBlogComponent from '../list-blog/ListBlogComponent';
+
 import './ContentStyle.css';
 
 const topicsBlog = [

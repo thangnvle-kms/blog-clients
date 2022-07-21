@@ -22,8 +22,8 @@ export default function PaginationComponent({ postsPerPage, totalPosts, paginate
                             {<nav>
                                 <ul>
                                     {
-                                        pageNumbers.map(number => (
-                                            <a href="/#" className="bg-white border-gray-300 text-gray-500 hover:bg-gray-50 relative inline-flex items-center px-4 py-2 border text-sm font-medium"
+                                        pageNumbers.map((number, key) => (
+                                            <a key={key} href="/#" className="bg-white border-gray-300 text-gray-500 hover:bg-gray-50 relative inline-flex items-center px-4 py-2 border text-sm font-medium"
                                                 onClick={() => paginate(number)}> {number} </a>
                                         ))
                                     }

@@ -7,17 +7,17 @@ import PostComponent from '../post/PostsComponent';
 export default function ListBlogComponent() {
     const [posts, setPosts] = useState([]);
     const [currentPage, setCurrentpage] = useState(1);
-    const [postsPerPage, setPostsPerPage] = useState(10);
+    const [postsPerPage, setPostsPerPage] = useState(5);
 
 
     useEffect(() => {
         const fetchPosts = async () => {
-            const res = await axios.get('https://jsonplaceholder.typicode.com/posts');
+            const res = await axios.get('http://localhost:8080/api/post');
             setPosts(res.data);
         }
         fetchPosts();
     },[]);
-   
+
     const indexOfLastPost = currentPage * postsPerPage;
     const indexOfFirstPost = indexOfLastPost - postsPerPage;
     const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
