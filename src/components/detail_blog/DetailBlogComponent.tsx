@@ -10,7 +10,7 @@ import { Detail } from "../model/Module";
 
 
 
-const DetailBlogComponent: React.FC<Detail> = (props) => {
+const DetailBlogComponent: React.FC<{}> = (props) => {
         // const { blog } = props;
     const params = useParams();
     const [detailBlog, setDetailBlog] = useState({id:'', title:'', content:'', img:'', shortDesc:'', comment:{}});

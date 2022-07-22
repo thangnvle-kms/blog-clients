@@ -6,6 +6,9 @@ import DetailBlogComponent from "../detail_blog/DetailBlogComponent";
 import InsertBlogComponent from "../insert_blog/InsertBlogComponent";
 import MyBlogComponent from "../my-blog/MyBlogComponent";
 
+
+
+
 export default function RouteComponent() {
     return (
         <div>

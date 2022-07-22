@@ -1,38 +1,27 @@
-import DetailBlogComponent from '../detail_blog/DetailBlogComponent';
 import ListBlogComponent from '../list-blog/ListBlogComponent';
-
+import React, { useState, useEffect } from 'react'
 import './ContentStyle.css';
+import axios from 'axios';
+import RightMenuComponent from '../menu/left-menu/RightMenuComponent';
 
-const topicsBlog = [
-    {
-        name: 'Front-end',
-    },
-    {
-        name: 'Back-end',
-    },
-    {
-        name: 'Fullstack',
-    },
 
-]
 function ContentComponent() {
+    const [category, setCategory] = useState<[]>([]);
+    useEffect(() => {
+        const fetchPosts = async () => {
+            const res = await axios.get('http://localhost:8080/api/category');
+            setCategory(res.data);
+        }
+        fetchPosts();
+    }, []);
+
     return (
         <div>
             <div className="row">
                 <div className="leftcolumn">
                     <ListBlogComponent />
                 </div>
-                <div className="rightcolumn">
-                    <div className="card">
-                        {
-                            topicsBlog.map((item, key) => (
-                                <button key = {key}className={`bg-transparent hover:bg-cyan-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded`}>
-                                    {item.name}
-                                </button>
-                            ))
-                        }
-                    </div>
-                </div>
+                <RightMenuComponent data={category} />
             </div>
         </div>
     )

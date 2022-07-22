@@ -10,7 +10,8 @@ export interface Blog {
 }
 
 export interface Detail {
-    blog?: Blog
+    //blog: Blog
+    blog: string;
 }
 
 export interface Comment {
@@ -23,4 +24,12 @@ export interface Comment {
 
 export interface CommentDetail {
     comment?: Comment
+}
+
+export interface CategoryModel {
+    id: number,
+    name: string,
+    createdAt: Date,
+    createdBy: string,
+    deletedAt: Date
 }
