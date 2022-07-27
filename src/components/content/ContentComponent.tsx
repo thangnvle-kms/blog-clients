@@ -2,7 +2,7 @@ import ListBlogComponent from '../list-blog/ListBlogComponent';
 import React, { useState, useEffect } from 'react'
 import './ContentStyle.css';
 import axios from 'axios';
-import RightMenuComponent from '../menu/left-menu/RightMenuComponent';
+import RightMenuComponent from '../menu/RightMenuComponent';
 
 
 function ContentComponent() {

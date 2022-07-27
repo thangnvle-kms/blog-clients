@@ -1,17 +1,18 @@
-import CommentComponent from "../comment/CommentComponent"
-import axios from 'axios';
 import React, { useState, useEffect } from 'react'
-import {
-    useParams
-} from "react-router-dom";
 
-import { Detail } from "../model/Module";
+import axios from 'axios';
+import { useParams } from "react-router-dom";
 
+import CommentComponent from "../comment/CommentComponent"
 
-
+type DetailBlog = {
+    id: number;
+    content: string;
+    createdAt: Date;
+    
+}
 
 const DetailBlogComponent: React.FC<{}> = (props) => {
-        // const { blog } = props;
     const params = useParams();
     const [detailBlog, setDetailBlog] = useState({id:'', title:'', content:'', img:'', shortDesc:'', comment:{}});
     useEffect(() => {
@@ -21,8 +22,7 @@ const DetailBlogComponent: React.FC<{}> = (props) => {
         }
         fetchPosts();
     }, []);
-
-
+    
     return (
         <div className="card box-border rounded-lg" style={{ width: '77%' }}>
             <div className="mt-6">

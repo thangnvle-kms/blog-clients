@@ -2,11 +2,18 @@ import {
     Link
 } from "react-router-dom";
 
-function PostComponent({ posts }: { posts: any }) {
+function PostComponent({ posts, status }: { posts: any, status: boolean }) {
+    const handlePostDelete = () => {
+        console.log(1)
+    }
+
+    const handlePostUpdate = () => {
+        console.log(2)
+    }
     return (
         <div>
             {
-                posts.map((item: any, key: any) => (
+                posts.map((item: any, key: string) => (
                     <div key={item.id} className="card box-border border-2 rounded-lg" style={{ width: '77%' }}>
                         <Link to={`/detail/${item.id}`}><h2 className="font-bold">{item.title}</h2></Link>
                         <div className='flex '>
@@ -23,9 +30,15 @@ function PostComponent({ posts }: { posts: any }) {
                             <div>
                                 <p>{item.shortDesc}</p>
                                 <p>{item.content}</p>
-                                <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded">
+                                {status && (<button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded">
                                     <Link to={`/detail/${item.id}`}>Read more</Link>
-                                </button>
+                                </button>)}
+                                {!status && (
+                                    <div>
+                                        <button className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded" onClick={() => handlePostDelete()}>Delete</button>
+                                        <button className="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded" onClick={handlePostUpdate}>Update</button>
+                                    </div>
+                                )}
                             </div>
                             <div className="w-96">
                                 <img src={item.img} alt="img" />

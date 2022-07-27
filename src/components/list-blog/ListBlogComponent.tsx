@@ -8,7 +8,7 @@ export default function ListBlogComponent() {
     const [posts, setPosts] = useState([]);
     const [currentPage, setCurrentpage] = useState(1);
     const [postsPerPage, setPostsPerPage] = useState(5);
-
+    const isStatus = true
 
     useEffect(() => {
         const fetchPosts = async () => {
@@ -26,7 +26,7 @@ export default function ListBlogComponent() {
 
     return (
         <div>
-            <PostComponent posts={currentPosts}/>
+            <PostComponent posts={currentPosts} status = {isStatus}/>
             <PaginationComponent postsPerPage={postsPerPage} totalPosts={posts.length} paginate={paginate}/>
         </div>
     )
