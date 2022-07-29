@@ -2,7 +2,7 @@ import {
     Link
 } from "react-router-dom";
 
-export default function LeftMenuComponent() {
+const LeftMenuComponent = () => {
     return (
         <div className="relative">
             <div className="fixed top-25 left-6 pt-5">
@@ -39,3 +39,4 @@ export default function LeftMenuComponent() {
         </div>
     )
 }
+export default LeftMenuComponent

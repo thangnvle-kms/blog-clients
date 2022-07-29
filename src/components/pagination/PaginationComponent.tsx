@@ -1,4 +1,4 @@
-export default function PaginationComponent({ postsPerPage, totalPosts, paginate }: { postsPerPage: any, totalPosts: any, paginate: any }) {
+const PaginationComponent = ({ postsPerPage, totalPosts, paginate }: { postsPerPage: number, totalPosts: number, paginate: any }) => {
     const pageNumbers = [];
     for (let index = 1; index <= Math.ceil(totalPosts / postsPerPage); index++) {
         pageNumbers.push(index);
@@ -41,5 +41,6 @@ export default function PaginationComponent({ postsPerPage, totalPosts, paginate
             </div>
         </div>
     )
-
 }
+
+export default PaginationComponent

@@ -1,9 +1,10 @@
-import axios from 'axios';
 import React, {useState, useEffect} from 'react' 
+import axios from 'axios';
+
 import PaginationComponent from '../pagination/PaginationComponent';
 import PostComponent from '../post/PostsComponent';
 
-export default function MyBlogComponent() {
+const MyBlogComponent = () => {
     const [posts, setPosts] = useState([]);
     const [currentPage, setCurrentpage] = useState(1);
     const [postsPerPage, setPostsPerPage] = useState(5);
@@ -20,8 +21,7 @@ export default function MyBlogComponent() {
     const indexOfLastPost = currentPage * postsPerPage;
     const indexOfFirstPost = indexOfLastPost - postsPerPage;
     const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
-
-    const paginate = (pageNumbers:any) => setCurrentpage(pageNumbers);
+    const paginate = (pageNumbers:number) => setCurrentpage(pageNumbers);
 
     return (
         <div>
@@ -30,3 +30,5 @@ export default function MyBlogComponent() {
         </div>
     )
 }
+
+export default MyBlogComponent

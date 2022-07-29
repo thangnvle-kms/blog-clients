@@ -1,14 +1,16 @@
+import {useState, useEffect} from 'react'
+
 import axios from 'axios';
-import React, {useState, useEffect} from 'react' 
+
 import PaginationComponent from '../pagination/PaginationComponent';
 import PostComponent from '../post/PostsComponent';
 
-
-export default function ListBlogComponent() {
+const ListBlogComponent = () => {
+    
     const [posts, setPosts] = useState([]);
     const [currentPage, setCurrentpage] = useState(1);
     const [postsPerPage, setPostsPerPage] = useState(5);
-    const isStatus = true
+    const isStatus = true;
 
     useEffect(() => {
         const fetchPosts = async () => {
@@ -22,7 +24,7 @@ export default function ListBlogComponent() {
     const indexOfFirstPost = indexOfLastPost - postsPerPage;
     const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
 
-    const paginate = (pageNumbers:any) => setCurrentpage(pageNumbers);
+    const paginate = (pageNumbers:number) => setCurrentpage(pageNumbers);
 
     return (
         <div>
@@ -31,3 +33,5 @@ export default function ListBlogComponent() {
         </div>
     )
 }
+
+export default ListBlogComponent

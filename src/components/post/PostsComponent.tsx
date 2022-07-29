@@ -2,7 +2,9 @@ import {
     Link
 } from "react-router-dom";
 
-function PostComponent({ posts, status }: { posts: any, status: boolean }) {
+import { Post } from "../model/Module";
+
+const PostComponent = ({ posts, status }: { posts: any, status: boolean }) => {
     const handlePostDelete = () => {
         console.log(1)
     }

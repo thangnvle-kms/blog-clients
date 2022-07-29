@@ -4,7 +4,7 @@ import LeftMenuComponent from "./components/menu/LeftMenuComponent";
 import {
   BrowserRouter as Router, Route, Link, NavLink
 } from "react-router-dom";
-import RouteComponent from "./components/route/RouteComponent";
+import RouteComponent from "./route/RouteComponent";
 
 function App() {
   const isStatus = false;

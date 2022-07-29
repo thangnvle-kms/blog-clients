@@ -1,9 +1,5 @@
-import { CommentDetail } from "../model/Module";
-import React, { useState, useEffect } from 'react'
-
-const CommentComponent: React.FC<CommentDetail> = (props) => {
+const CommentComponent = () => {
     
-    // const { comment } = props
     const isDisplayCommentChild = () => {
 
     }
@@ -13,7 +9,6 @@ const CommentComponent: React.FC<CommentDetail> = (props) => {
             <p className="mt-1 text-2xl font-bold text-left text-gray-800">
                 All comments on this post
             </p>
-            {/*comment 1*/}
             <div className="flex w-full px-6 py-6 mx-auto mt-10 bg-white border rounded-lg">
                 <a href="/#" className="flex"><img src="https://avatars.githubusercontent.com/u/71964085?v=4" alt="avatar" className="hidden object-cover w-14 h-14 mx-4 rounded-full sm:block" />
                 </a>
@@ -51,9 +46,6 @@ const CommentComponent: React.FC<CommentDetail> = (props) => {
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <div className="">
             </div>
         </div>
     )

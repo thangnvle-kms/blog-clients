@@ -1,9 +1,11 @@
 import NavbarComponent from "../nav-bar/NavbarComponent";
 
-export default function HeaderComponent() {
+const HeaderComponent = () => {
     return (
         <div>
             <NavbarComponent />
         </div>
     )
 }
+
+export default HeaderComponent

@@ -1,4 +1,4 @@
-export default function FooterComponent() {
+const FooterComponent = () => {
     return (
         <div>
             <footer className="text-center lg:text-left bg-gray-100 text-gray-600 mt-3">
@@ -139,3 +139,5 @@ export default function FooterComponent() {
         </div>
     )
 }
+
+export default FooterComponent

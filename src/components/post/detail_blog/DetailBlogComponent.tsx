@@ -1,28 +1,25 @@
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 
-import axios from 'axios';
 import { useParams } from "react-router-dom";
 
-import CommentComponent from "../comment/CommentComponent"
+import CommentComponent from "./comment/CommentComponent"
+import { getPostById } from '../../../service/service';
+import { Post } from '../../model/Module';
 
-type DetailBlog = {
-    id: number;
-    content: string;
-    createdAt: Date;
-    
-}
+const DetailBlogComponent = (props: Post) => {
 
-const DetailBlogComponent: React.FC<{}> = (props) => {
     const params = useParams();
-    const [detailBlog, setDetailBlog] = useState({id:'', title:'', content:'', img:'', shortDesc:'', comment:{}});
+    const [detailBlog, setDetailBlog] = useState(props);
+
+    async function getAPI() {
+        const data = await getPostById(params.id!);
+        setDetailBlog(data);
+    }
+
     useEffect(() => {
-        const fetchPosts = async () => {
-            const res = await axios.get(`http://localhost:8080/api/post/${params.id}`);
-            setDetailBlog(res.data);
-        }
-        fetchPosts();
+        getAPI();
     }, []);
-    
+
     return (
         <div className="card box-border rounded-lg" style={{ width: '77%' }}>
             <div className="mt-6">
@@ -43,7 +40,7 @@ const DetailBlogComponent: React.FC<{}> = (props) => {
                             </div>
                         </div>
                     </div>
-                    <CommentComponent  {...detailBlog.comment}/>
+                    <CommentComponent />
                 </div>
             </div>
         </div>

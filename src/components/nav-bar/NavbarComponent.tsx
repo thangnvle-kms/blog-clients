@@ -3,7 +3,7 @@ import { Popover } from '@headlessui/react'
 import SearchComponent from '../search/SearchComponent'
 import NavbarRightComponent from '../menu/NavbarRightComponent'
 
-export default function NavbarComponent() {
+const NavbarComponent = () => {
     return (
         <div>
             <Popover className="relative bg-white">
@@ -26,3 +26,5 @@ export default function NavbarComponent() {
         </div>
     )
 }
+
+export default NavbarComponent

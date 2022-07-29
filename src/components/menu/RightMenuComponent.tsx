@@ -2,7 +2,7 @@ import { CategoryModel } from "../model/Module";
 
 const RightMenuComponent: React.FC<{ data: CategoryModel[] }> = (props) => {
     return (
-        <div className="rightcolumn">
+        <div className="right-column">
             <div className="card grid mt-10">
                 {
                     props.data.map((item: CategoryModel, index) => (

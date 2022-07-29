@@ -1,24 +1,27 @@
-import ListBlogComponent from '../list-blog/ListBlogComponent';
-import React, { useState, useEffect } from 'react'
-import './ContentStyle.css';
-import axios from 'axios';
-import RightMenuComponent from '../menu/RightMenuComponent';
+import { useState, useEffect } from 'react'
 
+import ListBlogComponent from '../list-blog/ListBlogComponent';
+import RightMenuComponent from '../menu/RightMenuComponent';
+import { getCategory } from '../../service/service';
+import './ContentStyle.css';
 
 function ContentComponent() {
+    
     const [category, setCategory] = useState<[]>([]);
+
+    async function getValue() {
+        const data = await getCategory();
+        setCategory(data);
+    }
+
     useEffect(() => {
-        const fetchPosts = async () => {
-            const res = await axios.get('http://localhost:8080/api/category');
-            setCategory(res.data);
-        }
-        fetchPosts();
+        getValue()
     }, []);
 
     return (
         <div>
             <div className="row">
-                <div className="leftcolumn">
+                <div className="left-column">
                     <ListBlogComponent />
                 </div>
                 <RightMenuComponent data={category} />

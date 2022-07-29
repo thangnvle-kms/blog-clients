@@ -1,9 +1,11 @@
 import HeaderComponent from "../header/HeaderComponent";
 
-export default function HomeComponent() {
+const HomeComponent = () => {
   return (
     <div>
         <HeaderComponent />
     </div>
   )
 }
+
+export default HomeComponent

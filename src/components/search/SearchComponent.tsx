@@ -1,11 +1,13 @@
 import { useState } from "react";
 
-const SearchComponent: React.FC = () => {
+const SearchComponent = () => {
+
     const [search, setSearch] = useState('');
     const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
         setSearch(event.target.value);
         console.log(search);
-      };
+    };
+
     return (
         <div className="flex justify-start lg:w-0 lg:flex-1">
             <label className="relative block w-10/12">
